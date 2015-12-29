@@ -20,28 +20,131 @@
 
     <section class="main-content">
       <h1>
-<a id="javascript技术题-" class="anchor" href="#javascript%E6%8A%80%E6%9C%AF%E9%A2%98-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Javascript技术题： ##</h1>
+<a id="javascript技术题" class="anchor" href="#javascript%E6%8A%80%E6%9C%AF%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>Javascript技术题：</h1>
 
 <h3>
 <a id="1-请列举一些数组元素去重方法" class="anchor" href="#1-%E8%AF%B7%E5%88%97%E4%B8%BE%E4%B8%80%E4%BA%9B%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. 请列举一些数组元素去重方法</h3>
 
+<h6>
+<a id="定义新数组正向遍历旧数组保存旧数组中目前还未重复过的值复杂度on方" class="anchor" href="#%E5%AE%9A%E4%B9%89%E6%96%B0%E6%95%B0%E7%BB%84%E6%AD%A3%E5%90%91%E9%81%8D%E5%8E%86%E6%97%A7%E6%95%B0%E7%BB%84%E4%BF%9D%E5%AD%98%E6%97%A7%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9B%AE%E5%89%8D%E8%BF%98%E6%9C%AA%E9%87%8D%E5%A4%8D%E8%BF%87%E7%9A%84%E5%80%BC%E5%A4%8D%E6%9D%82%E5%BA%A6on%E6%96%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>定义新数组，正向遍历旧数组，保存旧数组中目前还未重复过的值。复杂度O(N方)</h6>
+
+<pre><code>Array.prototype.unique1 = function()
+{
+    var n = []; //一个新的临时数组
+    for(var i = 0; i &lt; this.length; i++) //遍历当前数组
+    {
+    //如果当前数组的第i已经保存进了临时数组，那么跳过，
+    //否则把当前项push到临时数组里面
+    if (n.indexOf(this[i]) == -1) n.push(this[i]);
+    }
+    return n;
+}
+</code></pre>
+
+<h6>
+<a id="定义新数组和哈希正向遍历旧数组未重复存入哈希和新数组重复则continue-复杂度0n" class="anchor" href="#%E5%AE%9A%E4%B9%89%E6%96%B0%E6%95%B0%E7%BB%84%E5%92%8C%E5%93%88%E5%B8%8C%E6%AD%A3%E5%90%91%E9%81%8D%E5%8E%86%E6%97%A7%E6%95%B0%E7%BB%84%E6%9C%AA%E9%87%8D%E5%A4%8D%E5%AD%98%E5%85%A5%E5%93%88%E5%B8%8C%E5%92%8C%E6%96%B0%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E5%88%99continue-%E5%A4%8D%E6%9D%82%E5%BA%A60n" aria-hidden="true"><span class="octicon octicon-link"></span></a>定义新数组和哈希，正向遍历旧数组，未重复，存入哈希和新数组，重复则continue 。复杂度0（N）</h6>
+
+<pre><code> Array.prototype.unique2 = function()
+{
+    var n = {},r=[]; //n为hash表，r为临时数组
+    for(var i = 0; i &lt; this.length; i++) //遍历当前数组
+    {
+    if (!n[this[i]]) //如果hash表中没有当前项
+    {
+        n[this[i]] = true; //存入hash表
+        r.push(this[i]); //把当前数组的当前项push到临时数组里面
+    }
+    }
+    return r;
+}
+</code></pre>
+
+<h6>
+<a id="定义新数组旧数组先排序遍历旧数组不重复push到新数组复杂度0n方" class="anchor" href="#%E5%AE%9A%E4%B9%89%E6%96%B0%E6%95%B0%E7%BB%84%E6%97%A7%E6%95%B0%E7%BB%84%E5%85%88%E6%8E%92%E5%BA%8F%E9%81%8D%E5%8E%86%E6%97%A7%E6%95%B0%E7%BB%84%E4%B8%8D%E9%87%8D%E5%A4%8Dpush%E5%88%B0%E6%96%B0%E6%95%B0%E7%BB%84%E5%A4%8D%E6%9D%82%E5%BA%A60n%E6%96%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>定义新数组，旧数组先排序，遍历旧数组，不重复，push到新数组。复杂度0（N方）</h6>
+
+<pre><code>Array.prototype.unique3 = function()
+{
+this.sort();
+var re=[this[0]];
+for(var i = 1; i &lt; this.length; i++)
+{
+    if( this[i] !== re[re.length-1])
+    {
+        re.push(this[i]);
+    }
+}
+return re;
+}
+</code></pre>
+
 <h3>
 <a id="2-javascript的作用域和作用域链是什么" class="anchor" href="#2-javascript%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E6%98%AF%E4%BB%80%E4%B9%88" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. javascript的作用域和作用域链是什么？</h3>
+
+<h6>
+<a id="作用域就是变量与函数的可访问范围即作用域控制着变量与函数的可见性和生命周期在javascript中有全局作用域和局部作用域" class="anchor" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%B0%B1%E6%98%AF%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%AF%E8%AE%BF%E9%97%AE%E8%8C%83%E5%9B%B4%E5%8D%B3%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8E%A7%E5%88%B6%E7%9D%80%E5%8F%98%E9%87%8F%E4%B8%8E%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7%E5%92%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9C%A8javascript%E4%B8%AD%E6%9C%89%E5%85%A8%E5%B1%80%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%B1%80%E9%83%A8%E4%BD%9C%E7%94%A8%E5%9F%9F" aria-hidden="true"><span class="octicon octicon-link"></span></a>作用域就是变量与函数的可访问范围，即作用域控制着变量与函数的可见性和生命周期。在JavaScript中，有全局作用域和局部作用域。</h6>
+
+<h6>
+<a id="对象的属性里函数被创建的作用域中对象的集合比如add函数被创建时add函数的作用域链会填入所有add函数可以访问的数据对象这个集合就是作用域链因为全局变量总是在作用域链尾部如果某函数被调用的特别深此函数调用局部变量会特别慢避免减少全局变量数局部再定义全局变量" class="anchor" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E9%87%8C%E5%87%BD%E6%95%B0%E8%A2%AB%E5%88%9B%E5%BB%BA%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%9B%86%E5%90%88%E6%AF%94%E5%A6%82add%E5%87%BD%E6%95%B0%E8%A2%AB%E5%88%9B%E5%BB%BA%E6%97%B6add%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E4%BC%9A%E5%A1%AB%E5%85%A5%E6%89%80%E6%9C%89add%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E8%BF%99%E4%B8%AA%E9%9B%86%E5%90%88%E5%B0%B1%E6%98%AF%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E5%9B%A0%E4%B8%BA%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E6%80%BB%E6%98%AF%E5%9C%A8%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E5%B0%BE%E9%83%A8%E5%A6%82%E6%9E%9C%E6%9F%90%E5%87%BD%E6%95%B0%E8%A2%AB%E8%B0%83%E7%94%A8%E7%9A%84%E7%89%B9%E5%88%AB%E6%B7%B1%E6%AD%A4%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%BC%9A%E7%89%B9%E5%88%AB%E6%85%A2%E9%81%BF%E5%85%8D%E5%87%8F%E5%B0%91%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E6%95%B0%E5%B1%80%E9%83%A8%E5%86%8D%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>对象的属性里，函数被创建的作用域中对象的集合。比如add函数被创建时，add函数的作用域链会填入所有add函数可以访问的数据对象。这个集合就是作用域链。因为全局变量总是在作用域链尾部，如果某函数被调用的特别深，此函数调用局部变量会特别慢。避免：减少全局变量数，局部再定义全局变量。</h6>
 
 <h3>
 <a id="3-javascript变量声名提升是什么意思" class="anchor" href="#3-javascript%E5%8F%98%E9%87%8F%E5%A3%B0%E5%90%8D%E6%8F%90%E5%8D%87%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. javascript变量声名提升是什么意思？</h3>
 
+<h6>
+<a id="ccjava是块级作用域javascript是函数式作用域函数运行时把变量的声明全都提升到函数top位置会出bug避免局部变量的赋值放在函数top位置" class="anchor" href="#ccjava%E6%98%AF%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9Fjavascript%E6%98%AF%E5%87%BD%E6%95%B0%E5%BC%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%8A%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E%E5%85%A8%E9%83%BD%E6%8F%90%E5%8D%87%E5%88%B0%E5%87%BD%E6%95%B0top%E4%BD%8D%E7%BD%AE%E4%BC%9A%E5%87%BAbug%E9%81%BF%E5%85%8D%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E8%B5%8B%E5%80%BC%E6%94%BE%E5%9C%A8%E5%87%BD%E6%95%B0top%E4%BD%8D%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>c，c++，java是块级作用域。javascript是函数式作用域。函数运行时，把变量的声明全都提升到函数top位置。会出BUG！避免：局部变量的赋值放在函数top位置。</h6>
+
 <h3>
 <a id="4-如何解决回调层次过深的问题" class="anchor" href="#4-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%9B%9E%E8%B0%83%E5%B1%82%E6%AC%A1%E8%BF%87%E6%B7%B1%E7%9A%84%E9%97%AE%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. 如何解决回调层次过深的问题？</h3>
+
+<h6>
+<a id="给匿名函数命名代码抛异常的时候准确定位" class="anchor" href="#%E7%BB%99%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D%E4%BB%A3%E7%A0%81%E6%8A%9B%E5%BC%82%E5%B8%B8%E7%9A%84%E6%97%B6%E5%80%99%E5%87%86%E7%A1%AE%E5%AE%9A%E4%BD%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>给匿名函数命名，代码抛异常的时候准确定位</h6>
+
+<h6>
+<a id="模块化" class="anchor" href="#%E6%A8%A1%E5%9D%97%E5%8C%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>模块化</h6>
 
 <h3>
 <a id="5-ajax是指什么jsonp是指什么两者的原理分别是" class="anchor" href="#5-ajax%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88jsonp%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88%E4%B8%A4%E8%80%85%E7%9A%84%E5%8E%9F%E7%90%86%E5%88%86%E5%88%AB%E6%98%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. Ajax是指什么？jsonP是指什么？两者的原理分别是？</h3>
 
+<h6>
+<a id="ajax-网页异步更新不需要刷新" class="anchor" href="#ajax-%E7%BD%91%E9%A1%B5%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E4%B8%8D%E9%9C%80%E8%A6%81%E5%88%B7%E6%96%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>AJAX 网页异步更新，不需要刷新。</h6>
+
 <h1>
-<a id="canvas技术题目-" class="anchor" href="#canvas%E6%8A%80%E6%9C%AF%E9%A2%98%E7%9B%AE-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Canvas技术题目： ##</h1>
+<a id="canvas技术题目" class="anchor" href="#canvas%E6%8A%80%E6%9C%AF%E9%A2%98%E7%9B%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>Canvas技术题目：</h1>
 
 <h3>
 <a id="1-请列举十个以上常用的canvas2d的接口" class="anchor" href="#1-%E8%AF%B7%E5%88%97%E4%B8%BE%E5%8D%81%E4%B8%AA%E4%BB%A5%E4%B8%8A%E5%B8%B8%E7%94%A8%E7%9A%84canvas2d%E7%9A%84%E6%8E%A5%E5%8F%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. 请列举十个以上常用的canvas2d的接口</h3>
+
+<h6>
+<a id="canvasgetcontext2d获取canvas上下文" class="anchor" href="#canvasgetcontext2d%E8%8E%B7%E5%8F%96canvas%E4%B8%8A%E4%B8%8B%E6%96%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>canvas.getContext('2d');获取canvas上下文</h6>
+
+<h6>
+<a id="ctxmovetoxy-起始点xy" class="anchor" href="#ctxmovetoxy-%E8%B5%B7%E5%A7%8B%E7%82%B9xy" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.moveTo(x,y) 起始点(x,y)</h6>
+
+<h6>
+<a id="ctxlinetoxy如果没有起始点就是起始点有就是终止点" class="anchor" href="#ctxlinetoxy%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E8%B5%B7%E5%A7%8B%E7%82%B9%E5%B0%B1%E6%98%AF%E8%B5%B7%E5%A7%8B%E7%82%B9%E6%9C%89%E5%B0%B1%E6%98%AF%E7%BB%88%E6%AD%A2%E7%82%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.lineTo(x,y);如果没有起始点，就是起始点；有，就是终止点</h6>
+
+<h6>
+<a id="ctxrectxywh画矩形" class="anchor" href="#ctxrectxywh%E7%94%BB%E7%9F%A9%E5%BD%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.rect(x,y,w,h)画矩形</h6>
+
+<h6>
+<a id="ctxarcxyradiusstartangleendangleanticclock圆弧" class="anchor" href="#ctxarcxyradiusstartangleendangleanticclock%E5%9C%86%E5%BC%A7" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.arc(x,y,radius,startAngle,endAngle,anticClock);圆弧</h6>
+
+<h6>
+<a id="ctxarctox1y1x2y2radius俩点之间最短弧线" class="anchor" href="#ctxarctox1y1x2y2radius%E4%BF%A9%E7%82%B9%E4%B9%8B%E9%97%B4%E6%9C%80%E7%9F%AD%E5%BC%A7%E7%BA%BF" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.arcTo(x1,y1,x2,y2,radius);俩点之间最短弧线</h6>
+
+<h6>
+<a id="ctxbeziercurvetocp1xcp1ycp2xcp2yxy三次贝塞尔" class="anchor" href="#ctxbeziercurvetocp1xcp1ycp2xcp2yxy%E4%B8%89%E6%AC%A1%E8%B4%9D%E5%A1%9E%E5%B0%94" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);三次贝塞尔</h6>
+
+<h6>
+<a id="ctxbeziercurvetocp1xcp1yxy两次贝塞尔" class="anchor" href="#ctxbeziercurvetocp1xcp1yxy%E4%B8%A4%E6%AC%A1%E8%B4%9D%E5%A1%9E%E5%B0%94" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.bezierCurveTo(cp1x,cp1y,x,y);两次贝塞尔</h6>
+
+<h6>
+<a id="ctxfull闭合路径" class="anchor" href="#ctxfull%E9%97%AD%E5%90%88%E8%B7%AF%E5%BE%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.full();闭合路径</h6>
+
+<h6>
+<a id="ctxclip剪切" class="anchor" href="#ctxclip%E5%89%AA%E5%88%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.clip();剪切</h6>
+
+<h6>
+<a id="ctxstroke描边" class="anchor" href="#ctxstroke%E6%8F%8F%E8%BE%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.stroke();描边</h6>
 
 <h3>
 <a id="2-在canvas下如何优化文字的渲染速度" class="anchor" href="#2-%E5%9C%A8canvas%E4%B8%8B%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E6%96%87%E5%AD%97%E7%9A%84%E6%B8%B2%E6%9F%93%E9%80%9F%E5%BA%A6" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. 在canvas下如何优化文字的渲染速度？</h3>
@@ -55,8 +158,11 @@
 <h3>
 <a id="5-请列举几个比较出名的js游戏框架" class="anchor" href="#5-%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%A0%E4%B8%AA%E6%AF%94%E8%BE%83%E5%87%BA%E5%90%8D%E7%9A%84js%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. 请列举几个比较出名的js游戏框架</h3>
 
+<h6>
+<a id="cocos2d-js-白鹭-phaser-pixi--construct2-easeljs-threejs-lufylegend" class="anchor" href="#cocos2d-js-%E7%99%BD%E9%B9%AD-phaser-pixi--construct2-easeljs-threejs-lufylegend" aria-hidden="true"><span class="octicon octicon-link"></span></a>cocos2d-js 白鹭 phaser pixi  Construct2 easeljs three.js lufylegend</h6>
+
 <h1>
-<a id="webgl技术题" class="anchor" href="#webgl%E6%8A%80%E6%9C%AF%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>WebGL技术题：</h1>
+<a id="webgl技术题" class="anchor" href="#webgl%E6%8A%80%E6%9C%AF%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>WebGL技术题:</h1>
 
 <h3>
 <a id="1-如何兼容性地获取webgl-context" class="anchor" href="#1-%E5%A6%82%E4%BD%95%E5%85%BC%E5%AE%B9%E6%80%A7%E5%9C%B0%E8%8E%B7%E5%8F%96webgl-context" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. 如何兼容性地获取WebGL context？</h3>
