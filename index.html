@@ -434,8 +434,8 @@ void main(void)
         function Init()
         {
             var myCanvasObject = document.getElementById('myCanvas');
-            webgl = myCanvasObject.getContext("webgl") | myCanvasObject.getContext("experimental-webgl")
-            |myCanvasObject.getContext("webkit-3d") | myCanvasObject.getContext("moz-webgl");
+            webgl = myCanvasObject.getContext("webgl") || myCanvasObject.getContext("experimental-webgl")
+            ||myCanvasObject.getContext("webkit-3d") || myCanvasObject.getContext("moz-webgl");
 
             webgl.viewport(0, 0, myCanvasObject.clientWidth, myCanvasObject.clientHeight);
 
