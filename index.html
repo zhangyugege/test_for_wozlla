@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-  <body onload='Init()'>
+  <body>
     <section class="page-header">
       <h1 class="project-name">Test for wozlla</h1>
       <h2 class="project-tagline">test_for_wozlla </h2>
@@ -77,6 +77,8 @@ return re;
 }
 </code></pre>
 
+<hr>
+
 <h3>
 <a id="2-javascript的作用域和作用域链是什么" class="anchor" href="#2-javascript%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E6%98%AF%E4%BB%80%E4%B9%88" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. javascript的作用域和作用域链是什么？</h3>
 
@@ -86,11 +88,15 @@ return re;
 <h4>
 <a id="对象的属性里函数被创建的作用域中对象的集合比如add函数被创建时add函数的作用域链会填入所有add函数可以访问的数据对象这个集合就是作用域链因为全局变量总是在作用域链尾部如果某函数被调用的特别深此函数调用局部变量会特别慢避免减少全局变量数局部再定义全局变量" class="anchor" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E9%87%8C%E5%87%BD%E6%95%B0%E8%A2%AB%E5%88%9B%E5%BB%BA%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%AD%E5%AF%B9%E8%B1%A1%E7%9A%84%E9%9B%86%E5%90%88%E6%AF%94%E5%A6%82add%E5%87%BD%E6%95%B0%E8%A2%AB%E5%88%9B%E5%BB%BA%E6%97%B6add%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E4%BC%9A%E5%A1%AB%E5%85%A5%E6%89%80%E6%9C%89add%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AE%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1%E8%BF%99%E4%B8%AA%E9%9B%86%E5%90%88%E5%B0%B1%E6%98%AF%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E5%9B%A0%E4%B8%BA%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E6%80%BB%E6%98%AF%E5%9C%A8%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE%E5%B0%BE%E9%83%A8%E5%A6%82%E6%9E%9C%E6%9F%90%E5%87%BD%E6%95%B0%E8%A2%AB%E8%B0%83%E7%94%A8%E7%9A%84%E7%89%B9%E5%88%AB%E6%B7%B1%E6%AD%A4%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E4%BC%9A%E7%89%B9%E5%88%AB%E6%85%A2%E9%81%BF%E5%85%8D%E5%87%8F%E5%B0%91%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E6%95%B0%E5%B1%80%E9%83%A8%E5%86%8D%E5%AE%9A%E4%B9%89%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>对象的属性里，函数被创建的作用域中对象的集合。比如add函数被创建时，add函数的作用域链会填入所有add函数可以访问的数据对象。这个集合就是作用域链。因为全局变量总是在作用域链尾部，如果某函数被调用的特别深，此函数调用局部变量会特别慢。避免：减少全局变量数，局部再定义全局变量。</h4>
 
+<hr>
+
 <h3>
 <a id="3-javascript变量声名提升是什么意思" class="anchor" href="#3-javascript%E5%8F%98%E9%87%8F%E5%A3%B0%E5%90%8D%E6%8F%90%E5%8D%87%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. javascript变量声名提升是什么意思？</h3>
 
 <h4>
 <a id="ccjava是块级作用域javascript是函数式作用域函数运行时把变量的声明全都提升到函数top位置会出bug避免局部变量的赋值放在函数top位置" class="anchor" href="#ccjava%E6%98%AF%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9Fjavascript%E6%98%AF%E5%87%BD%E6%95%B0%E5%BC%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%87%BD%E6%95%B0%E8%BF%90%E8%A1%8C%E6%97%B6%E6%8A%8A%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E%E5%85%A8%E9%83%BD%E6%8F%90%E5%8D%87%E5%88%B0%E5%87%BD%E6%95%B0top%E4%BD%8D%E7%BD%AE%E4%BC%9A%E5%87%BAbug%E9%81%BF%E5%85%8D%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E8%B5%8B%E5%80%BC%E6%94%BE%E5%9C%A8%E5%87%BD%E6%95%B0top%E4%BD%8D%E7%BD%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>c，c++，java是块级作用域。javascript是函数式作用域。函数运行时，把变量的声明全都提升到函数top位置。会出BUG！避免：局部变量的赋值放在函数top位置。</h4>
+
+<hr>
 
 <h3>
 <a id="4-如何解决回调层次过深的问题" class="anchor" href="#4-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%9B%9E%E8%B0%83%E5%B1%82%E6%AC%A1%E8%BF%87%E6%B7%B1%E7%9A%84%E9%97%AE%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. 如何解决回调层次过深的问题？</h3>
@@ -101,13 +107,42 @@ return re;
 <h4>
 <a id="模块化" class="anchor" href="#%E6%A8%A1%E5%9D%97%E5%8C%96" aria-hidden="true"><span class="octicon octicon-link"></span></a>模块化</h4>
 
+<hr>
+
 <h3>
 <a id="5-ajax是指什么jsonp是指什么两者的原理分别是" class="anchor" href="#5-ajax%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88jsonp%E6%98%AF%E6%8C%87%E4%BB%80%E4%B9%88%E4%B8%A4%E8%80%85%E7%9A%84%E5%8E%9F%E7%90%86%E5%88%86%E5%88%AB%E6%98%AF" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. Ajax是指什么？jsonP是指什么？两者的原理分别是？</h3>
 
 <h4>
-<a id="ajax-网页异步更新不需要刷新   jsonP：利用script标签绕过同源策略，获得一个类似这样的数据，jsonpcallback是页面存在的回调方法，参数就是想得到的json。
+<a id="ajax-网页异步更新不需要刷新" class="anchor" href="#ajax-%E7%BD%91%E9%A1%B5%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E4%B8%8D%E9%9C%80%E8%A6%81%E5%88%B7%E6%96%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>AJAX 网页异步更新，不需要刷新。</h4>
 
-jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})" class="anchor" href="#ajax-%E7%BD%91%E9%A1%B5%E5%BC%82%E6%AD%A5%E6%9B%B4%E6%96%B0%E4%B8%8D%E9%9C%80%E8%A6%81%E5%88%B7%E6%96%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>AJAX 网页异步更新，不需要刷新。</h4>
+<pre><code>$(function(){
+   $('#send').click(function(){
+     $.ajax({
+         type: "GET",
+         url: "test.json",
+         data: {username:$("#username").val(), content:$("#content").val()},
+         dataType: "json",
+         success: function(data){
+                     $('#resText').empty();   //清空resText里面的所有内容
+                     var html = ''; 
+                     $.each(data, function(commentIndex, comment){
+                           html += '&lt;div class="comment"&gt;&lt;h6&gt;' + comment['username']
+                                     + ':&lt;/h6&gt;&lt;p class="para"' + comment['content']
+                                     + '&lt;/p&gt;&lt;/div&gt;';
+                     });
+                     $('#resText').html(html);
+                  }
+        });
+  });
+});
+</code></pre>
+
+<h4>
+<a id="利用script标签绕过同源策略获得一个类似这样的数据jsonpcallback是页面存在的回调方法参数就是想得到的json" class="anchor" href="#%E5%88%A9%E7%94%A8script%E6%A0%87%E7%AD%BE%E7%BB%95%E8%BF%87%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5%E8%8E%B7%E5%BE%97%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BC%E8%BF%99%E6%A0%B7%E7%9A%84%E6%95%B0%E6%8D%AEjsonpcallback%E6%98%AF%E9%A1%B5%E9%9D%A2%E5%AD%98%E5%9C%A8%E7%9A%84%E5%9B%9E%E8%B0%83%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E5%B0%B1%E6%98%AF%E6%83%B3%E5%BE%97%E5%88%B0%E7%9A%84json" aria-hidden="true"><span class="octicon octicon-link"></span></a>利用script标签绕过同源策略，获得一个类似这样的数据，jsonpcallback是页面存在的回调方法，参数就是想得到的json。</h4>
+
+<p><code>jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})</code></p>
+
+<hr>
 
 <h1>
 <a id="canvas技术题目" class="anchor" href="#canvas%E6%8A%80%E6%9C%AF%E9%A2%98%E7%9B%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>Canvas技术题目：</h1>
@@ -148,14 +183,20 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
 <h4>
 <a id="ctxstroke描边" class="anchor" href="#ctxstroke%E6%8F%8F%E8%BE%B9" aria-hidden="true"><span class="octicon octicon-link"></span></a>ctx.stroke();描边</h4>
 
+<hr>
+
 <h3>
 <a id="2-在canvas下如何优化文字的渲染速度" class="anchor" href="#2-%E5%9C%A8canvas%E4%B8%8B%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%E6%96%87%E5%AD%97%E7%9A%84%E6%B8%B2%E6%9F%93%E9%80%9F%E5%BA%A6" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. 在canvas下如何优化文字的渲染速度？</h3>
 
 <h4>
 <a id="如果文字不怎么变渲染到一个小canvas上保存主canvas调用避免重复渲染" class="anchor" href="#%E5%A6%82%E6%9E%9C%E6%96%87%E5%AD%97%E4%B8%8D%E6%80%8E%E4%B9%88%E5%8F%98%E6%B8%B2%E6%9F%93%E5%88%B0%E4%B8%80%E4%B8%AA%E5%B0%8Fcanvas%E4%B8%8A%E4%BF%9D%E5%AD%98%E4%B8%BBcanvas%E8%B0%83%E7%94%A8%E9%81%BF%E5%85%8D%E9%87%8D%E5%A4%8D%E6%B8%B2%E6%9F%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>如果文字不怎么变，渲染到一个小canvas上保存。主canvas调用。避免重复渲染。</h4>
 
+<hr>
+
 <h3>
-<a id="3-写下几种composite-operation" class="anchor" href="#3-%E5%86%99%E4%B8%8B%E5%87%A0%E7%A7%8Dcomposite-operation" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. 写下几种composite operation</h3>
+<a id="3-写下几种composite-operation看不懂" class="anchor" href="#3-%E5%86%99%E4%B8%8B%E5%87%A0%E7%A7%8Dcomposite-operation%E7%9C%8B%E4%B8%8D%E6%87%82" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. 写下几种composite operation（看不懂。。。）</h3>
+
+<hr>
 
 <h3>
 <a id="4-transform和settransform接口的区别" class="anchor" href="#4-transform%E5%92%8Csettransform%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. transform和setTransform接口的区别</h3>
@@ -165,6 +206,8 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
 
 <h4>
 <a id="调用-settransform-时重置前一个变换矩阵然后构建新的矩阵" class="anchor" href="#%E8%B0%83%E7%94%A8-settransform-%E6%97%B6%E9%87%8D%E7%BD%AE%E5%89%8D%E4%B8%80%E4%B8%AA%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5%E7%84%B6%E5%90%8E%E6%9E%84%E5%BB%BA%E6%96%B0%E7%9A%84%E7%9F%A9%E9%98%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>调用 setTransform() 时，重置前一个变换矩阵然后构建新的矩阵</h4>
+
+<hr>
 
 <h3>
 <a id="5-请列举几个比较出名的js游戏框架" class="anchor" href="#5-%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%A0%E4%B8%AA%E6%AF%94%E8%BE%83%E5%87%BA%E5%90%8D%E7%9A%84js%E6%B8%B8%E6%88%8F%E6%A1%86%E6%9E%B6" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. 请列举几个比较出名的js游戏框架</h3>
@@ -192,6 +235,8 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
   return context;
 }
 </code></pre>
+
+<hr>
 
 <h3>
 <a id="2-列出10个常用的webgl接口" class="anchor" href="#2-%E5%88%97%E5%87%BA10%E4%B8%AA%E5%B8%B8%E7%94%A8%E7%9A%84webgl%E6%8E%A5%E5%8F%A3" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. 列出10个常用的WebGL接口</h3>
@@ -228,6 +273,8 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
 
 <h4>
 <a id="glcreatetexture创建纹理对象以存储纹理图像" class="anchor" href="#glcreatetexture%E5%88%9B%E5%BB%BA%E7%BA%B9%E7%90%86%E5%AF%B9%E8%B1%A1%E4%BB%A5%E5%AD%98%E5%82%A8%E7%BA%B9%E7%90%86%E5%9B%BE%E5%83%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>gl.createTexture();创建纹理对象以存储纹理图像</h4>
+
+<hr>
 
 <h3>
 <a id="3-webgl如何绘制图片" class="anchor" href="#3-webgl%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. WebGL如何绘制图片？</h3>
@@ -292,8 +339,15 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
 <h5>
 <a id="6上传顶点索引开始绘图" class="anchor" href="#6%E4%B8%8A%E4%BC%A0%E9%A1%B6%E7%82%B9%E7%B4%A2%E5%BC%95%E5%BC%80%E5%A7%8B%E7%BB%98%E5%9B%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.上传顶点索引开始绘图</h5>
 
+<hr>
+
 <h3>
 <a id="4-webgl如何绘制文本" class="anchor" href="#4-webgl%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6%E6%96%87%E6%9C%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. WebGL如何绘制文本？</h3>
+
+<h4>
+<a id="用-html-的内容先绘制到canvas2dwebgl渲染纹理" class="anchor" href="#%E7%94%A8-html-%E7%9A%84%E5%86%85%E5%AE%B9%E5%85%88%E7%BB%98%E5%88%B6%E5%88%B0canvas2dwebgl%E6%B8%B2%E6%9F%93%E7%BA%B9%E7%90%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>用 HTML 的内容。先绘制到canvas2D，webgl渲染纹理</h4>
+
+<hr>
 
 <h3>
 <a id="5-webgl的pipeline是怎么样的" class="anchor" href="#5-webgl%E7%9A%84pipeline%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84" aria-hidden="true"><span class="octicon octicon-link"></span></a>5. WebGL的pipeline是怎么样的？</h3>
@@ -328,20 +382,37 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
 <h4>
 <a id="最后帧缓冲frame-buffer是渲染输出的最终目的地帧缓冲是一个2d图像但又不仅仅是一个2d图像这么简单除了一个或多个颜色缓冲区之外帧缓冲还包含深度缓冲区depth-buffer和或模板缓冲区stencil-buffer这两个都是在最终绘制到帧缓冲之前可选的过滤片元的方式深度检测会忽略被前面已经绘制的物体挡住的后面的物体模板检测会使用模板缓冲区中绘制的形状约束帧缓冲中的可绘制区域将渲染工作模板化经过这两层过滤之后依然幸存的片元它们的颜色值会与在它们覆盖之下的颜色值进行α混合最终的颜色值深度值模板值会写入相应的缓冲区帧缓冲的输出结果也可以用作纹理输入到其他渲染中去" class="anchor" href="#%E6%9C%80%E5%90%8E%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer%E6%98%AF%E6%B8%B2%E6%9F%93%E8%BE%93%E5%87%BA%E7%9A%84%E6%9C%80%E7%BB%88%E7%9B%AE%E7%9A%84%E5%9C%B0%E5%B8%A7%E7%BC%93%E5%86%B2%E6%98%AF%E4%B8%80%E4%B8%AA2d%E5%9B%BE%E5%83%8F%E4%BD%86%E5%8F%88%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AF%E4%B8%80%E4%B8%AA2d%E5%9B%BE%E5%83%8F%E8%BF%99%E4%B9%88%E7%AE%80%E5%8D%95%E9%99%A4%E4%BA%86%E4%B8%80%E4%B8%AA%E6%88%96%E5%A4%9A%E4%B8%AA%E9%A2%9C%E8%89%B2%E7%BC%93%E5%86%B2%E5%8C%BA%E4%B9%8B%E5%A4%96%E5%B8%A7%E7%BC%93%E5%86%B2%E8%BF%98%E5%8C%85%E5%90%AB%E6%B7%B1%E5%BA%A6%E7%BC%93%E5%86%B2%E5%8C%BAdepth-buffer%E5%92%8C%E6%88%96%E6%A8%A1%E6%9D%BF%E7%BC%93%E5%86%B2%E5%8C%BAstencil-buffer%E8%BF%99%E4%B8%A4%E4%B8%AA%E9%83%BD%E6%98%AF%E5%9C%A8%E6%9C%80%E7%BB%88%E7%BB%98%E5%88%B6%E5%88%B0%E5%B8%A7%E7%BC%93%E5%86%B2%E4%B9%8B%E5%89%8D%E5%8F%AF%E9%80%89%E7%9A%84%E8%BF%87%E6%BB%A4%E7%89%87%E5%85%83%E7%9A%84%E6%96%B9%E5%BC%8F%E6%B7%B1%E5%BA%A6%E6%A3%80%E6%B5%8B%E4%BC%9A%E5%BF%BD%E7%95%A5%E8%A2%AB%E5%89%8D%E9%9D%A2%E5%B7%B2%E7%BB%8F%E7%BB%98%E5%88%B6%E7%9A%84%E7%89%A9%E4%BD%93%E6%8C%A1%E4%BD%8F%E7%9A%84%E5%90%8E%E9%9D%A2%E7%9A%84%E7%89%A9%E4%BD%93%E6%A8%A1%E6%9D%BF%E6%A3%80%E6%B5%8B%E4%BC%9A%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E7%BC%93%E5%86%B2%E5%8C%BA%E4%B8%AD%E7%BB%98%E5%88%B6%E7%9A%84%E5%BD%A2%E7%8A%B6%E7%BA%A6%E6%9D%9F%E5%B8%A7%E7%BC%93%E5%86%B2%E4%B8%AD%E7%9A%84%E5%8F%AF%E7%BB%98%E5%88%B6%E5%8C%BA%E5%9F%9F%E5%B0%86%E6%B8%B2%E6%9F%93%E5%B7%A5%E4%BD%9C%E6%A8%A1%E6%9D%BF%E5%8C%96%E7%BB%8F%E8%BF%87%E8%BF%99%E4%B8%A4%E5%B1%82%E8%BF%87%E6%BB%A4%E4%B9%8B%E5%90%8E%E4%BE%9D%E7%84%B6%E5%B9%B8%E5%AD%98%E7%9A%84%E7%89%87%E5%85%83%E5%AE%83%E4%BB%AC%E7%9A%84%E9%A2%9C%E8%89%B2%E5%80%BC%E4%BC%9A%E4%B8%8E%E5%9C%A8%E5%AE%83%E4%BB%AC%E8%A6%86%E7%9B%96%E4%B9%8B%E4%B8%8B%E7%9A%84%E9%A2%9C%E8%89%B2%E5%80%BC%E8%BF%9B%E8%A1%8C%CE%B1%E6%B7%B7%E5%90%88%E6%9C%80%E7%BB%88%E7%9A%84%E9%A2%9C%E8%89%B2%E5%80%BC%E6%B7%B1%E5%BA%A6%E5%80%BC%E6%A8%A1%E6%9D%BF%E5%80%BC%E4%BC%9A%E5%86%99%E5%85%A5%E7%9B%B8%E5%BA%94%E7%9A%84%E7%BC%93%E5%86%B2%E5%8C%BA%E5%B8%A7%E7%BC%93%E5%86%B2%E7%9A%84%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BD%9C%E7%BA%B9%E7%90%86%E8%BE%93%E5%85%A5%E5%88%B0%E5%85%B6%E4%BB%96%E6%B8%B2%E6%9F%93%E4%B8%AD%E5%8E%BB" aria-hidden="true"><span class="octicon octicon-link"></span></a>最后，帧缓冲（Frame Buffer）是渲染输出的最终目的地。帧缓冲是一个2D图像，但又不仅仅是一个2D图像这么简单。除了一个或多个颜色缓冲区之外，帧缓冲还包含深度缓冲区（Depth Buffer）和/或模板缓冲区（Stencil Buffer），这两个都是在最终绘制到帧缓冲之前可选的过滤片元的方式，深度检测会忽略被前面已经绘制的物体挡住的后面的物体，模板检测会使用模板缓冲区中绘制的形状约束帧缓冲中的可绘制区域，将渲染工作“模板化”。经过这两层过滤之后依然幸存的片元，它们的颜色值会与在它们覆盖之下的颜色值进行α混合。最终的颜色值、深度值、模板值会写入相应的缓冲区。帧缓冲的输出结果也可以用作纹理输入到其他渲染中去。</h4>
 
+<hr>
+
 <h3>
 <a id="6-着色器是什么" class="anchor" href="#6-%E7%9D%80%E8%89%B2%E5%99%A8%E6%98%AF%E4%BB%80%E4%B9%88" aria-hidden="true"><span class="octicon octicon-link"></span></a>6. 着色器是什么？</h3>
 
 <h4>
 <a id="webgl绘图的关键以字符串的形式嵌入在js文件中分为vertex-shader顶点着色器和pixel-shader像素着色器两种" class="anchor" href="#webgl%E7%BB%98%E5%9B%BE%E7%9A%84%E5%85%B3%E9%94%AE%E4%BB%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%B5%8C%E5%85%A5%E5%9C%A8js%E6%96%87%E4%BB%B6%E4%B8%AD%E5%88%86%E4%B8%BAvertex-shader%E9%A1%B6%E7%82%B9%E7%9D%80%E8%89%B2%E5%99%A8%E5%92%8Cpixel-shader%E5%83%8F%E7%B4%A0%E7%9D%80%E8%89%B2%E5%99%A8%E4%B8%A4%E7%A7%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>webgl绘图的关键。以字符串的形式嵌入在js文件中。分为Vertex Shader顶点着色器和Pixel Shader像素着色器两种</h4>
 
+<hr>
+
 <h3>
 <a id="7-绘制图片时shader里必然会用到什么内置变量" class="anchor" href="#7-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E6%97%B6shader%E9%87%8C%E5%BF%85%E7%84%B6%E4%BC%9A%E7%94%A8%E5%88%B0%E4%BB%80%E4%B9%88%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F" aria-hidden="true"><span class="octicon octicon-link"></span></a>7. 绘制图片时Shader里必然会用到什么内置变量？</h3>
+
+<h4>
+<a id="attribute-vec2-texturecoord" class="anchor" href="#attribute-vec2-texturecoord" aria-hidden="true"><span class="octicon octicon-link"></span></a>attribute vec2 textureCoord;</h4>
+
+<h4>
+<a id="uniform-sampler2d-texture" class="anchor" href="#uniform-sampler2d-texture" aria-hidden="true"><span class="octicon octicon-link"></span></a>uniform sampler2D texture;</h4>
+
+<h4>
+<a id="绘制图片就是绘制纹理" class="anchor" href="#%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E5%B0%B1%E6%98%AF%E7%BB%98%E5%88%B6%E7%BA%B9%E7%90%86" aria-hidden="true"><span class="octicon octicon-link"></span></a>绘制图片就是绘制纹理。</h4>
+
+<hr>
 
 <h3>
 <a id="8-drawarray和drawelements的区别" class="anchor" href="#8-drawarray%E5%92%8Cdrawelements%E7%9A%84%E5%8C%BA%E5%88%AB" aria-hidden="true"><span class="octicon octicon-link"></span></a>8. drawArray和drawElements的区别？</h3>
 
 <h4>
 <a id="drawelement可以通过缓存共用顶点缺额外的绘图调用优减少点的绘制次数" class="anchor" href="#drawelement%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E7%BC%93%E5%AD%98%E5%85%B1%E7%94%A8%E9%A1%B6%E7%82%B9%E7%BC%BA%E9%A2%9D%E5%A4%96%E7%9A%84%E7%BB%98%E5%9B%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%87%8F%E5%B0%91%E7%82%B9%E7%9A%84%E7%BB%98%E5%88%B6%E6%AC%A1%E6%95%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>drawElement可以通过缓存共用顶点。缺：额外的绘图调用。优：减少点的绘制次数。</h4>
+
+<hr>
 
 <h3>
 <a id="9-有哪些优化webgl性能的手段" class="anchor" href="#9-%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96webgl%E6%80%A7%E8%83%BD%E7%9A%84%E6%89%8B%E6%AE%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>9. 有哪些优化WebGL性能的手段？</h3>
@@ -351,6 +422,8 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
 
 <h4>
 <a id="规避重复渲染" class="anchor" href="#%E8%A7%84%E9%81%BF%E9%87%8D%E5%A4%8D%E6%B8%B2%E6%9F%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>规避重复渲染</h4>
+
+<hr>
 
 <h1>
 <a id="编程题" class="anchor" href="#%E7%BC%96%E7%A8%8B%E9%A2%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>编程题：</h1>
@@ -365,6 +438,4 @@ jsonpcallback({"Email":"zhww@outlook.com","Remark":"我来自遥远的东方"})"
 
   
   </body>
-  
-
 </html>
